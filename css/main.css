@@ -1,8 +1,31 @@
 body {
-    background-color: #F2F2F2;
+    //background-color: #F2F2F2;
+    background-color: #02BAFF;
+    font-family: 'Roboto', sans-serif;
 }
+.card {
+    width: 15em;
+    top: 25%;
+    left: 25%;
+    position: absolute;
+}
+div.heading {
+    text-align: center;
+    background-color: #009BA3;
+    line-height: 3;
 
-.main{
-  text-align: center;
-  border: 1px solid black;
+}
+div.heading > h1 {
+    font-size: larger;
+}
+.main {
+    text-align: center;
+    //border: 1px solid black;
+    background-color: #DEE9FF;
+}
+input.itemInput {
+    text-align: center;
+}
+div.add-item-container {
+    position: relative;
 }

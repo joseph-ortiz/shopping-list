@@ -7,6 +7,7 @@ $(document).ready(function(event) {
     $("#itemInput").keypress(function(event) {
         if (event.keyCode == 13) {
             addItem();
+
         }
     });
 
@@ -34,6 +35,7 @@ function addItem() {
         $("#shoppingList").append(newItemNode);
         $("li.item").unbind();
         addClickHandler();
+        $("#itemInput").val("");
     } else {
         alert("No value found");
     }
