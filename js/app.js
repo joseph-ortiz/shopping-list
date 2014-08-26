@@ -31,7 +31,7 @@ function addClickHandler() {
 function addItem() {
     var newItem = $("#itemInput").val();
     if ((newItem !== "") && (newItem !== null)) {
-        var newItemNode = "<li class='item'>" + newItem + "<a class='item-close'>close</a></li>";
+        var newItemNode = "<li class='item'><a class='itemDescription'>" + newItem + "</a><a class='item-close'>close</a></li>";
         $("#shoppingList").append(newItemNode);
         $("li.item").unbind();
         addClickHandler();
