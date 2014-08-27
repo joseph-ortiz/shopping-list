@@ -8,6 +8,17 @@ $(document).ready(function(event) {
         }
     });
     addMarkAllItemsCompleteEvent();
+
+$(".select-all").hide();
+    //$("#shoppingList").change(function(){
+        $("#shoppingList").bind('DOMNodeInserted', function(e) {
+        var list = $("#shoppingList");
+        if($(list).find("li").length > 0)
+            $(".select-all").show();
+    });
+
+
+        
 });
 
 function addClickHandler() {
@@ -16,6 +27,9 @@ function addClickHandler() {
         var item = $(this);
         if ($(item).hasClass('strike-through')) {
             markItemIncomplete(item);
+            var list = $("#shoppingList");
+            if($(list).find("li").length === 0)
+                $(".select-all").hide();
         } else {
             markItemCompleted(item);
         }
