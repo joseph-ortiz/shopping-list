@@ -51,21 +51,18 @@ div.heading > h1 {
 
 input.item-input {
     width: 85%;
-    min-height: 15px;
+    min-height: 23px;
     text-align: center;
-    position: absolute;
-    top: 59px;
-    height: 2em;
-    left: 2px;
-    padding: 0;
+    display: inline-block;
 }
 textarea:focus, input:focus {
     outline: 0;
 }
 div.add-item-container {
     background-color: azure;
-    width: 100%;
+    max-width: inherit;
     height: 2em;
+    padding: 3px 2px 3px 8px;
 }
 img.plus-icon {
     float: right;
