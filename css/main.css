@@ -45,6 +45,19 @@ div.heading {
 div.heading > h1 {
     font-size: larger;
 }
+.select-all {
+    background-color: #14C257;
+    text-align: center;
+}
+.select-all > button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+}
+.select-all.marked {
+    background-color: #FF364C;
+}
 /*------------------------------------*\
     #Input-Area
 \*------------------------------------*/
