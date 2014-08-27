@@ -1,62 +1,28 @@
+/**
+ * Table of Contents
+ *
+ * 
+ * Generic.......basic layout design
+ *
+ * -Components-
+ *
+ * Heading............The header title of the list
+ *
+ * Input-Area............input textbox to add items
+ *
+ * Shopping-List..............shopping list and it's items
+ *
+ * 
+ */
+
+
+/*------------------------------------*\
+    #Generic
+\*------------------------------------*/
 body {
-    background-color: #54585A;
+    background-color: #009BA3;//#54585A;
     font-family: 'Roboto', sans-serif;
-    font-weight: bolder;
-}
-/*Form layout*/
-
-div.heading {
-    text-align: center;
-    background-color: #009BA3;
-    line-height: 3;
-}
-div.heading > h1 {
-    font-size: larger;
-}
-.main {
-    text-align: center;
-    //border: 1px solid black;
-    background-color: #DEE9FF;
-    position: relative;
-}
-
-/*Form stuff*/
-
-input.item-input {
-    width: 85%;
-    min-height: 15px;
-    text-align: center;
-    position: absolute;
-    top: 59px;
-    height: 2em;
-    left: 2px;
-}
-
-div.add-item-container {
-    background-color: azure;
-	width: 100%;
-	height: 2em;
-}
-
-#shoppingList {
-    height: 2em;
-}
-.item {
-    position: relative;
-    text-align: center;
-    line-height: 3;
-    background-color: #DEE9FF;
-}
-	.item > a.item-close {
-	    position: absolute;
-	    top: 0;
-	    left: 12em;
-	    color: red;
-	}
-
-img.plus-icon {
-    float: right;
-    height: 30px;
+    font-weight: normal;
 }
 
 .center {
@@ -68,3 +34,78 @@ img.plus-icon {
     margin-left: -150px;
     margin-top: -150px;
 }
+
+
+/*------------------------------------*\
+    #Heading
+\*------------------------------------*/
+div.heading {
+    text-align: center;
+    background-color: #02BAFF;
+    line-height: 3;
+}
+div.heading > h1 {
+    font-size: larger;
+}
+
+
+
+
+/*------------------------------------*\
+    #Input-Area
+\*------------------------------------*/
+
+input.item-input {
+    width: 85%;
+    min-height: 15px;
+    text-align: center;
+    position: absolute;
+    top: 59px;
+    height: 2em;
+    left: 2px;
+    padding: 0;
+}
+textarea:focus, input:focus {
+    outline: 0;
+}
+div.add-item-container {
+    background-color: azure;
+    width: 100%;
+    height: 2em;
+}
+img.plus-icon {
+    float: right;
+    height: 30px;
+}
+
+
+/*------------------------------------*\
+    #SHOPPING-LIST
+\*------------------------------------*/
+#shoppingList {
+    height: 2em;
+}
+.item {
+    position: relative;
+    text-align: center;
+    line-height: 3;
+    background-color: #DEE9FF;
+    width: 100%;
+}
+
+li.item + li.item {
+	border-top: 1px dashed black;
+}
+.item > a.item-close {
+    display: inline-block;
+    float: right;
+    padding-right: 10px;
+    color: red;
+}
+.item-disabled {
+    text-shadow: 0 0 0 #000;
+    color: transparent;
+}
+
+
+
