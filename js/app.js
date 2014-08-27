@@ -7,15 +7,16 @@ $(document).ready(function(event) {
     $("#itemInput").keypress(function(event) {
         if (event.keyCode == 13) {
             addItem();
-
         }
     });
 
 });
 
 function addClickHandler() {
-    $("li.item").dblclick(function() { //toggles list item with a strikeout.
+   
+    $(".item").click(function() { //toggles list item with a strikeout.
         var item = $(this);
+
         if (item.parent().is("strike")) {
             $(item).unwrap();
         } else {
@@ -31,7 +32,7 @@ function addClickHandler() {
 function addItem() {
     var newItem = $("#itemInput").val();
     if ((newItem !== "") && (newItem !== null)) {
-        var newItemNode = "<p class='item'><a class='itemDescription'>" + newItem + "</a><a class='item-close'>close</a></p>";
+        var newItemNode = "<li class='item'>" + newItem +"<a class='item-close'>x</a></li>";
         $("#shoppingList").append(newItemNode);
         $(".item").unbind();
         addClickHandler();
