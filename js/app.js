@@ -1,5 +1,5 @@
 $(document).ready(function(event) {
-    
+
     $("#addButton").click(function() {
         addItem();
     });
@@ -13,14 +13,14 @@ $(document).ready(function(event) {
 });
 
 function addClickHandler() {
-   
+
     $(".item").click(function() { //toggles list item with a strikeout.
         var item = $(this);
 
-        if (item.parent().is("strike")) {
-            $(item).unwrap();
+        if ($(item).hasClass('strike-through')) {
+            $(item).removeClass('strike-through');
         } else {
-            $(item).wrap("<strike>");
+            $(item).addClass('strike-through');
         }
     });
 
@@ -32,7 +32,7 @@ function addClickHandler() {
 function addItem() {
     var newItem = $("#itemInput").val();
     if ((newItem !== "") && (newItem !== null)) {
-        var newItemNode = "<li class='item'>" + newItem +"<a class='item-close'>x</a></li>";
+        var newItemNode = "<li class='item no-select'>" + newItem + "<a class='item-close'>x</a></li>";
         $("#shoppingList").append(newItemNode);
         $(".item").unbind();
         addClickHandler();

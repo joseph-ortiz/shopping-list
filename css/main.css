@@ -15,16 +15,15 @@
  * 
  */
 
-
 /*------------------------------------*\
     #Generic
 \*------------------------------------*/
+
 body {
     background-color: #009BA3;//#54585A;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
 }
-
 .center {
     width: 300px;
     height: 300px;
@@ -34,11 +33,10 @@ body {
     margin-left: -150px;
     margin-top: -150px;
 }
-
-
 /*------------------------------------*\
     #Heading
 \*------------------------------------*/
+
 div.heading {
     text-align: center;
     background-color: #02BAFF;
@@ -47,10 +45,6 @@ div.heading {
 div.heading > h1 {
     font-size: larger;
 }
-
-
-
-
 /*------------------------------------*\
     #Input-Area
 \*------------------------------------*/
@@ -77,11 +71,10 @@ img.plus-icon {
     float: right;
     height: 30px;
 }
-
-
 /*------------------------------------*\
     #SHOPPING-LIST
 \*------------------------------------*/
+
 #shoppingList {
     height: 2em;
 }
@@ -92,9 +85,11 @@ img.plus-icon {
     background-color: #DEE9FF;
     width: 100%;
 }
-
+.item.strike-through {
+    text-decoration: line-through;
+}
 li.item + li.item {
-	border-top: 1px dashed black;
+    border-top: 1px dotted black;
 }
 .item > a.item-close {
     display: inline-block;
@@ -106,6 +101,11 @@ li.item + li.item {
     text-shadow: 0 0 0 #000;
     color: transparent;
 }
-
-
-
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
