@@ -9,16 +9,13 @@ $(document).ready(function(event) {
     });
     addMarkAllItemsCompleteEvent();
 
-$(".select-all").hide();
+    $(".select-all").hide();
     //$("#shoppingList").change(function(){
-        $("#shoppingList").bind('DOMNodeInserted', function(e) {
+    $("#shoppingList").bind('DOMNodeInserted', function(e) {
         var list = $("#shoppingList");
-        if($(list).find("li").length > 0)
+        if ($(list).find("li").length > 0)
             $(".select-all").show();
     });
-
-
-        
 });
 
 function addClickHandler() {
@@ -28,7 +25,7 @@ function addClickHandler() {
         if ($(item).hasClass('strike-through')) {
             markItemIncomplete(item);
             var list = $("#shoppingList");
-            if($(list).find("li").length === 0)
+            if ($(list).find("li").length === 0)
                 $(".select-all").hide();
         } else {
             markItemCompleted(item);
@@ -37,6 +34,9 @@ function addClickHandler() {
 
     $("a.item-close").click(function(event) { //removes item from list
         $(this).parent("li").remove();
+        if($("#shoppingList").find("li").length === 0)
+             $(".select-all").hide();
+
     });
 }
 
