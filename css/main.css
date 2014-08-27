@@ -81,6 +81,7 @@ img.plus-icon {
     line-height: 3;
     background-color: #DEE9FF;
     width: 100%;
+    word-wrap: break-word;
 }
 .item.strike-through {
     text-decoration: line-through;
