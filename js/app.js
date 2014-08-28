@@ -4,13 +4,13 @@ $(document).ready(function(event) {
    // removeOnlyCheckedItems();
     $("#addButton").click(function() {
         addItem();
-
     });
     $("#itemInput").keypress(function(event) {
         if (event.keyCode == 13) {
             addItem();
         }
     });
+
     addMarkAllItemsCompleteEvent();
     
     $("#shoppingList").bind('DOMNodeInserted', function(e) {
@@ -36,6 +36,7 @@ function addClickHandlers() {
         } else {
             markItemCompleted(item);
         }
+        checkButtonStatus();
     });
 
     $("a.item-close").click(function(event) { //removes item from list
@@ -47,7 +48,7 @@ function addClickHandlers() {
     checkButtonStatus();
     });
 
-    $("#removeCheckedButton").click(function() {
+    $("#removeCheckedButton").click(function() {//removes an item permanently.
         $("#shoppingList").find("li.item.strike-through").remove();
         checkButtonStatus();
     });
@@ -60,7 +61,7 @@ function markItemCompleted(li) {
 }
 
 function markItemIncomplete(li) {
-     $(li).addClass('no-select');
+    $(li).addClass('no-select');
     $(li).removeClass('strike-through');
     checkButtonStatus();
 }
