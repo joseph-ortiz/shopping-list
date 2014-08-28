@@ -1,4 +1,8 @@
 $(document).ready(function(event) {
+
+removeOnlyCheckedItems();
+    $("#removeCheckedButton").hide();
+
     $("#addButton").click(function() {
         addItem();
     });
@@ -29,13 +33,20 @@ function addClickHandler() {
                 $(".select-all").hide();
         } else {
             markItemCompleted(item);
+            $("#removeCheckedButton").show();
         }
+
+        if( $("#shoppingList").find("li.item.strike-through").length === 0)
+                     $("#removeCheckedButton").hide();
     });
 
     $("a.item-close").click(function(event) { //removes item from list
         $(this).parent("li").remove();
-        if($("#shoppingList").find("li").length === 0)
-             $(".select-all").hide();
+        if ($("#shoppingList").find("li").length === 0) {
+            $(".select-all").hide();
+            InitializeMarkAllCompleteButton();
+
+        }
 
     });
 }
@@ -61,6 +72,14 @@ function addItem() {
     }
 }
 
+function InitializeMarkAllCompleteButton() {
+    var button = $(".mark-all-complete");
+    $(button).text("Mark All Complete");
+    $(button).parent().removeClass("marked");
+    $(button).attr("toggle-checked", "false");
+
+}
+
 function addMarkAllItemsCompleteEvent() {
     var button = $(".mark-all-complete");
     $(button).click(function() {
@@ -69,10 +88,9 @@ function addMarkAllItemsCompleteEvent() {
         if (areAllItemsChecked === "true") {
             $(listItems).each(function(index) {
                 markItemIncomplete(listItems[index]);
+
             });
-            $(button).text("Mark All Complete");
-            $(button).parent().removeClass("marked");
-            $(button).attr("toggle-checked", "false");
+            InitializeMarkAllCompleteButton();
         } else {
             $(listItems).each(function(index) {
                 markItemCompleted(listItems[index]);
@@ -83,4 +101,12 @@ function addMarkAllItemsCompleteEvent() {
         }
     });
 
+}
+
+function removeOnlyCheckedItems() {
+    $("#removeCheckedButton").click(function() {
+        $("#shoppingList").find("li.item.strike-through").remove();
+        $("#removeCheckedButton").hide();
+
+    });
 }

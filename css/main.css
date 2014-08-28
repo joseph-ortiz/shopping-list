@@ -58,6 +58,18 @@ div.heading > h1 {
 .select-all.marked {
     background-color: #FF364C;
 }
+
+.remove-all-completed{
+    background-color: #8D22AF;
+    text-align: center;
+}
+
+.remove-all-completed-button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+}
 /*------------------------------------*\
     #Input-Area
 \*------------------------------------*/
